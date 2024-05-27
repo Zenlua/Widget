@@ -1,6 +1,15 @@
 name: Account
 on:
-  workflow_dispatch: 
+  workflow_dispatch:
+    inputs:
+      SERIAL:
+        description: 'Tên serial'
+        required: true
+        default: ''
+      WIDGETID:
+        description: 'Nhập id widget'
+        required: true
+        default: ''
 permissions: write-all
 jobs:
   build:
@@ -10,13 +19,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: 'Start process'
+        env:
+          SERIAL: ${{ inputs.SERIAL }}
+          WIDGETID: ${{ inputs.WIDGETID }}
         run: |
           # Kakathic
-          env
-
-      - name: Upload binary
+          curl -s -G -L https://github.com/Zenlua/Widget/releases/download/tmp/vip.txt > vip.txt
+          echo "$WIDGETID" | awk '{print "'$SERIAL'="$0}' >> vip.txt
+      - name: Upload txt
         uses: softprops/action-gh-release@v2
         with:
-          name: upload
+          name: Tmp
           tag_name: tmp
-          files: kaka.sh
+          files: vip.txt
