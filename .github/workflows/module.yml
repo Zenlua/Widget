@@ -12,7 +12,7 @@ jobs:
       - name: 'Start process'
         run: |
           # Kakathic
-          .github/Tvip.sh
+          . .github/Tvip.sh
       - name: Upload sh
         uses: softprops/action-gh-release@v2
         with:
