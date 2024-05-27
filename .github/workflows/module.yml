@@ -1,0 +1,21 @@
+name: Tạo module
+on:
+  workflow_dispatch:
+permissions: write-all
+jobs:
+  build:
+    name: 'See progress'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: 'Start process'
+        run: |
+          # Kakathic
+          bash .github/Tvip.sh
+      - name: Upload sh
+        uses: softprops/action-gh-release@v2
+        with:
+          name: Tmp
+          tag_name: tmp
+          files: vip.sh
