@@ -11,7 +11,8 @@ jobs:
         uses: actions/checkout@v3
       - name: 'Start process'
         run: |
-          # Kakathic         
+          # Kakathic
+          env
 
       - name: Upload binary
         uses: softprops/action-gh-release@v2
