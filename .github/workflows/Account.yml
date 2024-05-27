@@ -1,0 +1,21 @@
+name: Account
+on:
+  workflow_dispatch: 
+permissions: write-all
+jobs:
+  build:
+    name: 'See progress'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: 'Start process'
+        run: |
+          # Kakathic         
+
+      - name: Upload binary
+        uses: softprops/action-gh-release@v2
+        with:
+          name: upload
+          tag_name: tmp
+          files: kaka.sh
