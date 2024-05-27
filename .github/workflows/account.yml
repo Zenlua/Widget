@@ -1,4 +1,4 @@
-name: Account
+name: Thêm tài khoản
 on:
   workflow_dispatch:
     inputs:
