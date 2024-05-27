@@ -1,6 +1,9 @@
 name: Tạo module
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/module.yml'
 permissions: write-all
 jobs:
   build:
