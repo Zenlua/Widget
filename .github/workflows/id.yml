@@ -46,7 +46,15 @@ jobs:
           echo "$WIDGETIDF" | tee -a free.txt
           echo
           fi
-          [ "$WIDGETIDD" ] && sed -i "/$WIDGETIDD/d" vip.txt free.txt
+          if [ "$WIDGETIDD" ];then
+          [ "$(ls vip.txt)" ] && curl -s -G -L https://github.com/Zenlua/Widget/releases/download/tmp/vip.txt | tee vip.txt
+          echo
+          [ "$(ls free.txt)" ] && curl -s -G -L https://github.com/Zenlua/Widget/releases/download/tmp/free.txt | tee free.txt
+          echo
+          for vsjf in $WIDGETIDD; do
+          sed -i "/$vsjf/d" vip.txt free.txt
+          done
+          fi
       - name: Upload txt
         uses: softprops/action-gh-release@v2
         with:
