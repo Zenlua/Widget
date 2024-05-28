@@ -1,4 +1,4 @@
-name: Thêm id
+name: Xử lý ID
 on:
   workflow_dispatch:
     inputs:
