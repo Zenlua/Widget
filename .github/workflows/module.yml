@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - '.github/workflows/module.yml'
+      - '.github/Tvip.sh'
 permissions: write-all
 jobs:
   build:
