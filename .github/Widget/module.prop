@@ -1,0 +1,7 @@
+id=widgetos
+name=WidgetOS
+author=kakathic
+description=This module will allow adding languages ​​to widgets, can be flashed with magisk, or twrp etc. Currently there are only 2 languages English, Việt Nam
+version=1.0
+versionCode=1
+updateJson=
