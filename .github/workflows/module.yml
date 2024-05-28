@@ -16,12 +16,12 @@ jobs:
       - name: 'Start process'
         run: |
           # Kakathic
-          
           chmod 777 .github/Tvip.sh
           .github/Tvip.sh
+          cp -rf vip.sh .github/Widget/bin
       - name: Upload sh
         uses: softprops/action-gh-release@v2
         with:
           name: Tmp
           tag_name: tmp
-          files: vip.sh
+          files: .sh
