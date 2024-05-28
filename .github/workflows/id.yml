@@ -34,6 +34,7 @@ jobs:
           WIDGETIDD: ${{ inputs.WIDGETIDD }}
         run: |
           # Kakathic
+          cd $GITHUB_WORKSPACE
           if [ "$SERIAL" ] && [ "$WIDGETID" ];then
           curl -s -G -L https://github.com/Zenlua/Widget/releases/download/tmp/vip.txt | tee vip.txt
           echo
@@ -47,12 +48,12 @@ jobs:
           echo
           fi
           if [ "$WIDGETIDD" ];then
-          [ "$(ls vip.txt)" ] && curl -s -G -L https://github.com/Zenlua/Widget/releases/download/tmp/vip.txt | tee vip.txt
+          [ -e "$GITHUB_WORKSPACE/vip.txt" ] && curl -s -G -L https://github.com/Zenlua/Widget/releases/download/tmp/vip.txt | tee vip.txt
           echo
-          [ "$(ls free.txt)" ] && curl -s -G -L https://github.com/Zenlua/Widget/releases/download/tmp/free.txt | tee free.txt
+          [ -e "$GITHUB_WORKSPACE/free.txt" ] && curl -s -G -L https://github.com/Zenlua/Widget/releases/download/tmp/free.txt | tee free.txt
           echo
           for vsjf in $WIDGETIDD; do
-          sed -i "/$vsjf/d" vip.txt free.txt
+          sed -i "/$vsjf/d" $GITHUB_WORKSPACE/*.txt
           done
           fi
       - name: Upload txt
