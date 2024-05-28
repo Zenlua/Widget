@@ -36,21 +36,21 @@ jobs:
           # Kakathic
           cd $GITHUB_WORKSPACE
           if [ "$SERIAL" ] && [ "$WIDGETID" ];then
-          curl -s -G -L https://github.com/Zenlua/Widget/releases/download/tmp/vip.txt | tee vip.txt
+          curl -s -G -L https://github.com/Zenlua/Widget/releases/download/tmp/vip.txt | sed "/Not Found/d" | tee vip.txt
           echo
           echo "$WIDGETID" | tr ' ' '\n' | awk '{print "'$SERIAL'="$0}' | tee -a vip.txt
           echo
           fi          
           if [ "$WIDGETIDF" ];then
-          curl -s -G -L https://github.com/Zenlua/Widget/releases/download/tmp/free.txt | tee free.txt
+          curl -s -G -L https://github.com/Zenlua/Widget/releases/download/tmp/free.txt | sed "/Not Found/d" | tee free.txt
           echo
           echo "$WIDGETIDF" | tr ' ' '\n' | tee -a free.txt
           echo
           fi
           if [ "$WIDGETIDD" ];then
-          [ -e "$GITHUB_WORKSPACE/vip.txt" ] || curl -s -G -L https://github.com/Zenlua/Widget/releases/download/tmp/vip.txt | tee vip.txt
+          [ -e "$GITHUB_WORKSPACE/vip.txt" ] || curl -s -G -L https://github.com/Zenlua/Widget/releases/download/tmp/vip.txt | sed "/Not Found/d" | tee vip.txt
           echo
-          [ -e "$GITHUB_WORKSPACE/free.txt" ] || curl -s -G -L https://github.com/Zenlua/Widget/releases/download/tmp/free.txt | tee free.txt
+          [ -e "$GITHUB_WORKSPACE/free.txt" ] || curl -s -G -L https://github.com/Zenlua/Widget/releases/download/tmp/free.txt | sed "/Not Found/d" | tee free.txt
           echo
           for vsjf in $WIDGETIDD; do
           sed -i "/$vsjf/d" $GITHUB_WORKSPACE/*.txt
