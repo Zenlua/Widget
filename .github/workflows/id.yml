@@ -48,9 +48,9 @@ jobs:
           echo
           fi
           if [ "$WIDGETIDD" ];then
-          [ -e "$GITHUB_WORKSPACE/vip.txt" ] && curl -s -G -L https://github.com/Zenlua/Widget/releases/download/tmp/vip.txt | tee vip.txt
+          [ -e "$GITHUB_WORKSPACE/vip.txt" ] || curl -s -G -L https://github.com/Zenlua/Widget/releases/download/tmp/vip.txt | tee vip.txt
           echo
-          [ -e "$GITHUB_WORKSPACE/free.txt" ] && curl -s -G -L https://github.com/Zenlua/Widget/releases/download/tmp/free.txt | tee free.txt
+          [ -e "$GITHUB_WORKSPACE/free.txt" ] || curl -s -G -L https://github.com/Zenlua/Widget/releases/download/tmp/free.txt | tee free.txt
           echo
           for vsjf in $WIDGETIDD; do
           sed -i "/$vsjf/d" $GITHUB_WORKSPACE/*.txt
