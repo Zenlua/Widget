@@ -4,11 +4,15 @@ on:
     inputs:
       SERIAL:
         description: 'Tên serial'
-        required: true
+        required: false
         default: ''
       WIDGETID:
-        description: 'Nhập id widget'
-        required: true
+        description: 'Vip id'
+        required: false
+        default: ''
+      WIDGETIDF:
+        description: 'Free id'
+        required: false
         default: ''
 permissions: write-all
 jobs:
@@ -22,14 +26,26 @@ jobs:
         env:
           SERIAL: ${{ inputs.SERIAL }}
           WIDGETID: ${{ inputs.WIDGETID }}
+          WIDGETIDF: ${{ inputs.WIDGETIDF }}
         run: |
           # Kakathic
+          if [ "$SERIAL" ];then
           curl -s -G -L https://github.com/Zenlua/Widget/releases/download/tmp/vip.txt | tee vip.txt
           echo
           echo "$WIDGETID" | awk '{print "'$SERIAL'="$0}' | tee -a vip.txt
+          echo
+          fi
+          
+          if [ "$WIDGETIDF" ];then
+          curl -s -G -L https://github.com/Zenlua/Widget/releases/download/tmp/free.txt | tee free.txt
+          echo
+          echo "$WIDGETIDF" | tee -a free.txt
+          echo
+          fi
+          
       - name: Upload txt
         uses: softprops/action-gh-release@v2
         with:
           name: Tmp
           tag_name: tmp
-          files: vip.txt
+          files: ./*.txt
