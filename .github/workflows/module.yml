@@ -19,6 +19,8 @@ jobs:
           chmod 777 .github/Tvip.sh
           .github/Tvip.sh
           cp -rf vip.sh .github/Widget/bin
+          cd .github/Widget
+          zip -r *
       - name: Upload sh
         uses: softprops/action-gh-release@v2
         with:
