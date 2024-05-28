@@ -16,11 +16,13 @@ jobs:
       - name: 'Start process'
         run: |
           # Kakathic
+          skdh="$(grep -m1 version= .github/Widget/module.prop | cut -d= -f2)"
           chmod 777 .github/Tvip.sh
           .github/Tvip.sh
           cp -rf vip.sh .github/Widget/bin
           cd .github/Widget
-          zip -r *
+          zip -r $GITHUB_WORKSPACE/WidgetOS_$skdh.zip *
+          cd $GITHUB_WORKSPACE
       - name: Upload sh
         uses: softprops/action-gh-release@v2
         with:
