@@ -1,0 +1,48 @@
+#!/sbin/sh
+
+umask 022
+
+# echo before loading util_functions
+ui_print() { echo "$1"; }
+
+require_new_magisk() {
+  ui_print "*******************************"
+  ui_print " Please install Magisk v20.4+! "
+  ui_print "*******************************"
+  exit 1
+}
+
+export OUTFD=$2
+export ZIPFILE=$3
+
+mount /data 2>/dev/null
+
+if [ -f /data/adb/magisk/util_functions.sh ] && [ "$ANDROID_DATA" ];then
+. /data/adb/magisk/util_functions.sh
+[ $MAGISK_VER_CODE -lt 20400 ] && require_new_magisk
+install_module
+exit 0
+fi
+
+# dữ liệu 
+export MODPATH=/tmp/widget
+Checknn="$(grep -acm1 'vi-VN' /data/system/users/0/settings_system.xml)"
+
+ui_print() {
+echo -e "ui_print $1\nui_print" >> /proc/self/fd/$OUTFD
+}
+
+ui_print " "
+[ "$Checknn" == 1 ] && ui_print "  Tên: Widget OS by Kakathic" || ui_print "  Name: Widget OS by Kakathic"
+ui_print " "
+
+mkdir -p $MODPATH
+unzip -o -j "$ZIPFILE" -d $MODPATH
+chmod -R 755 $MODPATH
+$MODPATH/widget.sh
+
+ui_print " "
+[ "$Checknn" == 1 ] && ui_print "  Hoàn thành" || ui_print "  Complete"
+ui_print " "
+
+exit 0
