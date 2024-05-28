@@ -3,19 +3,19 @@ on:
   workflow_dispatch:
     inputs:
       SERIAL:
-        description: 'Tên serial'
+        description: 'Tên Serial'
         required: false
         default: ''
       WIDGETID:
-        description: 'Vip id'
+        description: 'Vip ID'
         required: false
         default: ''
       WIDGETIDF:
-        description: 'Free id'
+        description: 'Free ID'
         required: false
         default: ''
       WIDGETIDD:
-        description: 'Xoá id'
+        description: 'Xoá ID'
         required: false
         default: ''
 permissions: write-all
