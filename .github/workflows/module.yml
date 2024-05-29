@@ -27,6 +27,7 @@ jobs:
           cd .github/Widget
           zip -r $GITHUB_WORKSPACE/WidgetOS_$(getmodun version).zip *
           cd $GITHUB_WORKSPACE
+          cat $TOME/.github/Along.md | sed -n "/#### $VER/,/####/P" | sed "/#/d" | sed '1d' | sed '$d' >$TOME/log.txt
           echo '{
           "version": "'$VUR'",
           "versionCode": "'$VSR'",
