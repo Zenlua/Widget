@@ -16,16 +16,33 @@ jobs:
       - name: 'Start process'
         run: |
           # Kakathic
-          skdh="$(grep -m1 version= .github/Widget/module.prop | cut -d= -f2)"
+          TOME="$GITHUB_WORKSPACE"
+          getmodun(){ grep -m1 "$1=" $TOME/.github/Widget/module.prop | cut -d= -f2; }
+          upenv(){ echo "$1=$2" >> $GITHUB_ENV; eval "$1=$2"; }
+          upenv VUR "$(getmodun version)"
+          upenv VSR "$(getmodun versionCode)"
           chmod 777 .github/Tvip.sh
           .github/Tvip.sh
           cp -rf vip.sh .github/Widget/bin
           cd .github/Widget
-          zip -r $GITHUB_WORKSPACE/WidgetOS_$skdh.zip *
+          zip -r $GITHUB_WORKSPACE/WidgetOS_$(getmodun version).zip *
           cd $GITHUB_WORKSPACE
-      - name: Upload sh
+          echo '{
+          "version": "'$VUR'",
+          "versionCode": "'$VSR'",
+          "zipUrl": "https://github.com/Zenlua/Widget/releases/download/V'$VUR'/WidgetOS_'${VUR}'.zip",
+          "changelog": "https://raw.githubusercontent.com/Zenlua/Widget/main/.github/Along.md"
+          }' > $TOME/overlay.json
+      - name: Upload zip
         uses: softprops/action-gh-release@v2
+        with:
+          name: Widget OS ${{ env.VUR }}
+          tag_name: V${{ env.VUR }}
+          files: ./*.zip
+          body_path: log.txt
+      - name: Upload json
+        uses: softprops/action-gh-release@v1
         with:
           name: Tmp
           tag_name: tmp
-          files: .sh
+          files: ./*.json
