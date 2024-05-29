@@ -1,4 +1,4 @@
-# WidgetOS
+# Widget OS
 
 + [Tiếng Việt](./README.md) | English
 
