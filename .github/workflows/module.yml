@@ -5,6 +5,7 @@ on:
     paths:
       - '.github/workflows/module.yml'
       - '.github/Tvip.sh'
+      - '.github/Widget/*'
 permissions: write-all
 jobs:
   build:
@@ -33,11 +34,11 @@ jobs:
           "versionCode": "'$VSR'",
           "zipUrl": "https://github.com/Zenlua/Widget/releases/download/V'$VUR'/WidgetOS_'${VUR}'.zip",
           "changelog": "https://raw.githubusercontent.com/Zenlua/Widget/main/.github/Along.md"
-          }' > $TOME/overlay.json
+          }' > $TOME/widgetos.json
       - name: Upload zip
         uses: softprops/action-gh-release@v2
         with:
-          name: Widget OS ${{ env.VUR }}
+          name: WidgetOS ${{ env.VUR }}
           tag_name: V${{ env.VUR }}
           files: ./*.zip
           body_path: log.txt
