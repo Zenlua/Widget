@@ -1,6 +1,6 @@
 # WidgetOS
 
-+ Tiếng Việt | [English](./Widget/EN.md)
++ Tiếng Việt | [English](./EN.md)
 
 + Mô-đun này có tác dụng Việt hóa widget hyperos, miui cả trả phí và miễn phí
 
