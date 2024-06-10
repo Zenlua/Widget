@@ -1,7 +1,7 @@
 
 ## Changelog Widget OS
 
-+ Github: [Zenlua/Widget](https://github.com/Zenlua/Widget)
++ Github: [Widget](https://github.com/Zenlua/Widget)
 
 + Report: [Telegram](https://t.me/widget_os)
 
