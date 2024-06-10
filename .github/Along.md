@@ -8,6 +8,7 @@
 #### V1.0
 
 + Beta
++ Add Aod translation
 
 #### V0.0
 
