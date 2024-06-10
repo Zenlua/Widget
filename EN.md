@@ -1,6 +1,6 @@
 # Widget OS
 
-+ [Tiếng Việt](./README.md) | English
++ [Tiếng Việt](./README.md)
 
 + This module has the ability to localize hyperos and miui widgets, both paid and free
 
