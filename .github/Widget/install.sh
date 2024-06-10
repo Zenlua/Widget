@@ -22,6 +22,9 @@ on_install() {
 unzip -o -j "$ZIPFILE" bin/* -d $MODPATH >&2
 chmod -R 755 $MODPATH
 $MODPATH/widget.sh
+killall com.miui.home
+killall com.miui.personalassistant
+killall com.android.thememanager
 [ "$Checknn" == 1 ] && ui_print "  Hoàn thành" || ui_print "  Complete"
 ui_print " "
 }
