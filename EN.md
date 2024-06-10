@@ -4,6 +4,8 @@
 
 + This module has the ability to localize hyperos and miui widgets, both paid and free
 
++ Revised calendar in AOD, only supports some text aods, images will not be translated.
+
 > [!Tip]
 > Download: [Release](https://github.com/Zenlua/Widget/releases)
 
