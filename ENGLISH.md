@@ -1,9 +1,8 @@
 # Widget OS
 
-+ This module is used to translate Widget and AOD `HyperOS` `MIUI`
-
 + [Changelog](./.github/Along.md)
 
++ This module is used to translate Widget and AOD `HyperOS` `MIUI`
 
 > [!Tip]
 > Download: [Release](https://github.com/Zenlua/Widget/releases)
