@@ -2,7 +2,7 @@
 
 + [English](./EN.md)
 
-+ Mô-đun này có tác dụng Việt hóa Widget, AOD `HyperOS`
++ Mô-đun này có tác dụng Việt hóa Widget, AOD `HyperOS` `MIUI`
 
 + [Nhật ký](./.github/Along.md)
 
