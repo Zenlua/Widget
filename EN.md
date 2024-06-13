@@ -4,7 +4,7 @@
 
 + This module is used to translate Widget and AOD `HyperOS`
 
-+ [Changer log](./.github/ALong.md)
++ [Changelog](.github/ALong.md)
 
 
 > [!Tip]
