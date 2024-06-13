@@ -1,6 +1,6 @@
 # Widget OS
 
-+ [English](./EN.md)
++ [English](./ENGLISH.md)
 
 + Mô-đun này có tác dụng Việt hóa Widget, AOD `HyperOS` `MIUI`
 
