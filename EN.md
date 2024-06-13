@@ -2,9 +2,10 @@
 
 + [Tiếng Việt](./README.md)
 
-+ This module has the ability to localize hyperos and miui widgets, both paid and free
++ This module is used to translate Widget and AOD `HyperOS`
 
-+ Revised calendar in AOD, only supports some text aods, images will not be translated.
++ [Changer log](./.github/ALong.md)
+
 
 > [!Tip]
 > Download: [Release](https://github.com/Zenlua/Widget/releases)
