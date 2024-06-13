@@ -1,6 +1,6 @@
 # Widget OS
 
-+ This module is used to translate Widget and AOD `HyperOS`
++ This module is used to translate Widget and AOD `HyperOS` `MIUI`
 
 + [Changelog](./.github/Along.md)
 
