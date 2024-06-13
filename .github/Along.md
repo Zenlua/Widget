@@ -1,5 +1,5 @@
 
-## Changelog Widget OS
+## Changelog module
 
 + Github: [Widget](https://github.com/Zenlua/Widget)
 
