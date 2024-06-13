@@ -1,10 +1,8 @@
 # Widget OS
 
-+ [Tiếng Việt](./README.md)
-
 + This module is used to translate Widget and AOD `HyperOS`
 
-+ [Changelog](./.github/ALong.md)
++ [Changelog](./.github/Along.md)
 
 
 > [!Tip]
