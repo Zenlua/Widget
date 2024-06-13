@@ -2,9 +2,7 @@
 
 + [English](./EN.md)
 
-+ Mô-đun này có tác dụng Việt hóa widget hyperos, miui cả trả phí và miễn phí
-
-+ Sửa lại lịch ở AOD, chỉ hỗ trợ một số aod văn bản, hình ảnh sẽ không dịch được.
++ Mô-đun này có tác dụng Việt hóa Widget, AOD `HyperOS`
 
 > [!Tip]
 > Tải xuống: [Release](https://github.com/Zenlua/Widget/releases)
