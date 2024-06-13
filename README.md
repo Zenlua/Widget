@@ -4,7 +4,7 @@
 
 + Mô-đun này có tác dụng Việt hóa Widget, AOD `HyperOS`
 
-+ [Nhật ký](./.github/ALong.md)
++ [Nhật ký](./.github/Along.md)
 
 > [!Tip]
 > Tải xuống: [Release](https://github.com/Zenlua/Widget/releases)
