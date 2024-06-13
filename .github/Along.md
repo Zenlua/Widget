@@ -1,9 +1,7 @@
 
 ## Changelog module
 
-+ Github: [Widget](https://github.com/Zenlua/Widget)
-
-+ Report: [Telegram](https://t.me/widget_os)
++ Source: [Widget](https://github.com/Zenlua/Widget) | [Telegram](https://t.me/widget_os)
 
 #### V1.0
 
